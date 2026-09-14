@@ -10,6 +10,25 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    slug: "aethergrid",
+    name: "AetherGrid",
+    tagline: "The intelligent coordination layer for Africa's distributed-energy infrastructure",
+    icon: "⚡",
+    summary:
+      "AetherGrid coordinates solar, battery, mini-grid, and hybrid-energy assets through forecasting, optimization, autonomous coordination, and governed human override.",
+    description:
+      "AetherGrid enables energy operators to forecast demand, coordinate distributed assets, optimize available capacity, and govern autonomous decisions across solar, battery, mini-grid, and hybrid-energy networks. It is Opulentia Digital Core Horizon's flagship platform and its commercial wedge into African distributed-energy infrastructure. Current build: a functioning simulation and coordination prototype running on real autonomous-tick infrastructure — not yet a deployed African energy network.",
+    capabilities: [
+      "Telemetry ingestion from distributed energy assets",
+      "Demand forecasting across connected sites",
+      "Distributed asset coordination — solar, battery, mini-grid, hybrid",
+      "Optimization engine for available capacity",
+      "Governance and human override on autonomous decisions",
+      "Full audit trail on every coordination decision",
+      "Operator intelligence dashboard for real-time visibility",
+    ],
+  },
+  {
     slug: "horizon-intelligence",
     name: "Horizon Intelligence",
     tagline: "Enterprise AI orchestration for complex operations",

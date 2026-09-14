@@ -17,7 +17,7 @@ const inter = Inter({
 
 const siteUrl = "https://opulentia-digital.vercel.app";
 const description =
-  "Opulentia Digital Core Horizon (RC-9802444) — enterprise AI, analytics, and cloud infrastructure, with a live technology news hub.";
+  "Opulentia Digital Core Horizon (RC-9802444) — the intelligent coordination layer for Africa's distributed-energy infrastructure. Flagship platform: AetherGrid.";
 
 export const metadata: Metadata = {
   title: "Opulentia Digital Core Horizon",

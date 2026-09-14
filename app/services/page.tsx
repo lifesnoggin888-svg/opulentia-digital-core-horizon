@@ -10,8 +10,9 @@ export default function ServicesPage() {
       <p className="text-xs font-semibold tracking-[0.3em] text-amber">SOLUTIONS</p>
       <h1 className="mt-3 font-display text-4xl text-text sm:text-5xl">The Core Platform</h1>
       <p className="mt-6 max-w-2xl text-base text-text-dim">
-        Four products, engineered to work together or stand alone: AI
-        orchestration, analytics, cloud infrastructure, and digital trust.
+        AetherGrid, our flagship platform for African distributed-energy coordination, runs on
+        a core technology stack of AI orchestration, analytics, cloud infrastructure, and
+        digital trust — each also available as its own product.
       </p>
 
       <div className="mt-16 space-y-6">

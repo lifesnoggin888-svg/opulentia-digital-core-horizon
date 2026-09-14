@@ -24,57 +24,96 @@ export default async function Home() {
           <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
             OPULENTIA DIGITAL CORE HORIZON · RC-9802444
           </p>
-          <h1 className="font-display text-5xl leading-tight tracking-tight text-text sm:text-6xl md:text-7xl">
-            ENTERPRISE AI
+          <h1 className="font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
+            The intelligent coordination layer for
             <br />
-            INTELLIGENCE
-            <br />
-            HORIZON
+            Africa&apos;s distributed-energy infrastructure
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base text-text-dim">
-            AI orchestration, analytics, cloud infrastructure, and digital trust —
-            engineered as one platform, built for organizations that need real
-            operational readiness.
+            <span className="text-text">AetherGrid</span>, our flagship platform, coordinates
+            solar, battery, mini-grid, and hybrid-energy assets through forecasting,
+            optimization, autonomous coordination, and governed human override.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/services"
+              href="/services/aethergrid"
               className="rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
             >
-              ACCESS CORE
+              EXPLORE AETHERGRID
             </Link>
-            <Link
-              href="/about"
+            <a
+              href="https://aethergrid-delta.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-sm border border-border px-8 py-3 text-sm font-semibold tracking-wide text-text transition hover:border-amber hover:text-amber"
             >
-              About the Company
-            </Link>
+              View Live Demo
+            </a>
           </div>
+          <p className="mt-4 text-xs text-text-dim">
+            Current build: a functioning simulation and coordination prototype — not yet a
+            deployed African energy network.
+          </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 text-center">
-          <p className="text-xs font-semibold tracking-[0.3em] text-amber">PLATFORM</p>
-          <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
-            Four Products, One Core
-          </h2>
+          <p className="text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
+          <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">AetherGrid</h2>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/services/${p.slug}`}
-              className="group flex flex-col rounded-md border border-border bg-panel p-6 transition hover:border-amber"
+        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            "Telemetry ingestion",
+            "Demand forecasting",
+            "Distributed asset coordination",
+            "Optimization engine",
+            "Governance / human override",
+            "Audit trail",
+            "Operator intelligence",
+          ].map((capability) => (
+            <div
+              key={capability}
+              className="rounded-md border border-border bg-panel p-5 text-sm text-text-dim"
             >
-              <span className="text-3xl text-amber">{p.icon}</span>
-              <h3 className="mt-4 font-display text-lg text-text">{p.name}</h3>
-              <p className="mt-2 flex-1 text-sm text-text-dim">{p.summary}</p>
-              <span className="mt-4 text-xs font-semibold tracking-wide text-amber group-hover:underline">
-                Explore Details →
-              </span>
-            </Link>
+              {capability}
+            </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-panel/40 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 text-center">
+            <p className="text-xs font-semibold tracking-[0.3em] text-amber">
+              THE CORE TECHNOLOGY STACK
+            </p>
+            <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
+              What AetherGrid runs on
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-text-dim">
+              AetherGrid is built on Opulentia&apos;s broader enterprise platform — orchestration,
+              analytics, cloud infrastructure, and digital trust, engineered as one core.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products
+              .filter((p) => p.slug !== "aethergrid")
+              .map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/services/${p.slug}`}
+                  className="group flex flex-col rounded-md border border-border bg-panel p-6 transition hover:border-amber"
+                >
+                  <span className="text-3xl text-amber">{p.icon}</span>
+                  <h3 className="mt-4 font-display text-lg text-text">{p.name}</h3>
+                  <p className="mt-2 flex-1 text-sm text-text-dim">{p.summary}</p>
+                  <span className="mt-4 text-xs font-semibold tracking-wide text-amber group-hover:underline">
+                    Explore Details →
+                  </span>
+                </Link>
+              ))}
+          </div>
         </div>
       </section>
 
