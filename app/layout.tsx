@@ -3,6 +3,7 @@ import { Tektur, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ClickSound from "@/components/ClickSound";
 
 const tektur = Tektur({
   variable: "--font-tektur",
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${tektur.variable} ${inter.variable} antialiased`}>
+        <ClickSound />
         <Nav />
         {children}
         <Footer />

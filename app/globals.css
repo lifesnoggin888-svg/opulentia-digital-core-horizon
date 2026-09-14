@@ -195,15 +195,34 @@ body {
   border-right: 2px solid var(--color-amber);
 }
 
-/* Glass HUD panel. */
+/* Glass HUD panel — sharp, saturated glass: crisp edge-light, real
+   refraction blur, a thin specular sheen across the top. */
 .op-glass {
   position: relative;
-  border-radius: 0.375rem;
-  border: 1px solid rgba(255, 191, 0, 0.35);
-  background: linear-gradient(160deg, rgba(255, 191, 0, 0.08), rgba(10, 13, 20, 0.7));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 0 1px rgba(255, 191, 0, 0.08), 0 20px 60px -20px rgba(255, 191, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 191, 0, 0.5);
+  background: linear-gradient(160deg, rgba(255, 191, 0, 0.14), rgba(10, 13, 20, 0.72));
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  box-shadow:
+    0 0 0 1px rgba(255, 191, 0, 0.14),
+    0 1px 0 0 rgba(255, 255, 255, 0.14) inset,
+    0 24px 60px -20px rgba(255, 191, 0, 0.35),
+    0 4px 16px -6px rgba(0, 0, 0, 0.5);
+}
+
+.op-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.02) 22%,
+    transparent 40%
+  );
+  pointer-events: none;
 }
 
 /* Radar-ping ring. */
