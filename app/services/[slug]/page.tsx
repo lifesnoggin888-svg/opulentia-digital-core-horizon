@@ -26,17 +26,19 @@ export default async function ProductPage({ params }: { params: Params }) {
         ← All Solutions
       </Link>
 
-      <div className="mt-6 flex items-center gap-4">
-        <span className="text-5xl text-amber">{product.icon}</span>
+      <div className="op-reveal op-reveal-1 mt-6 flex items-center gap-4">
+        <span className="op-badge text-2xl">{product.icon}</span>
         <div>
           <h1 className="font-display text-4xl text-text sm:text-5xl">{product.name}</h1>
           <p className="mt-1 text-base text-text-dim">{product.tagline}</p>
         </div>
       </div>
 
-      <p className="mt-10 text-base leading-relaxed text-text-dim">{product.description}</p>
+      <p className="op-reveal op-reveal-2 mt-10 text-base leading-relaxed text-text-dim">
+        {product.description}
+      </p>
 
-      <div className="mt-12">
+      <div className="op-reveal op-reveal-3 op-card mt-12 p-8">
         <h2 className="font-display text-lg text-text">Capabilities</h2>
         <ul className="mt-4 space-y-3">
           {product.capabilities.map((c) => (
@@ -48,11 +50,8 @@ export default async function ProductPage({ params }: { params: Params }) {
         </ul>
       </div>
 
-      <div className="mt-14 flex flex-wrap gap-4">
-        <Link
-          href="/contact"
-          className="inline-block rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
-        >
+      <div className="op-reveal op-reveal-4 mt-14 flex flex-wrap gap-4">
+        <Link href="/contact" className="op-btn-ripple rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim">
           Talk to the Team
         </Link>
         {product.slug === "aethergrid" && (

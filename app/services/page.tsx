@@ -7,23 +7,23 @@ export const metadata: Metadata = { title: "Solutions — Opulentia Digital Core
 export default function ServicesPage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-24">
-      <p className="text-xs font-semibold tracking-[0.3em] text-amber">SOLUTIONS</p>
-      <h1 className="mt-3 font-display text-4xl text-text sm:text-5xl">The Core Platform</h1>
-      <p className="mt-6 max-w-2xl text-base text-text-dim">
+      <p className="op-reveal op-reveal-1 text-xs font-semibold tracking-[0.3em] text-amber">SOLUTIONS</p>
+      <h1 className="op-reveal op-reveal-2 mt-3 font-display text-4xl text-text sm:text-5xl">The Core Platform</h1>
+      <p className="op-reveal op-reveal-3 mt-6 max-w-2xl text-base text-text-dim">
         AetherGrid, our flagship platform for African distributed-energy coordination, runs on
         a core technology stack of AI orchestration, analytics, cloud infrastructure, and
         digital trust — each also available as its own product.
       </p>
 
-      <div className="mt-16 space-y-6">
+      <div className="op-reveal op-reveal-4 mt-16 space-y-6">
         {products.map((p) => (
           <Link
             key={p.slug}
             href={`/services/${p.slug}`}
-            className="group flex flex-col justify-between gap-4 rounded-md border border-border bg-panel p-8 transition hover:border-amber sm:flex-row sm:items-center"
+            className="op-card group flex flex-col justify-between gap-4 p-8 sm:flex-row sm:items-center"
           >
             <div className="flex items-start gap-5">
-              <span className="text-4xl text-amber">{p.icon}</span>
+              <span className="op-badge text-xl">{p.icon}</span>
               <div>
                 <h2 className="font-display text-xl text-text">{p.name}</h2>
                 <p className="mt-1 text-sm text-text-dim">{p.tagline}</p>

@@ -17,9 +17,9 @@ export default async function NewsPage() {
 
   return (
     <main className="mx-auto max-w-5xl px-6 py-24">
-      <p className="text-xs font-semibold tracking-[0.3em] text-amber">LIVE FEED</p>
-      <h1 className="mt-3 font-display text-4xl text-text sm:text-5xl">Tech News Hub</h1>
-      <p className="mt-6 max-w-2xl text-base text-text-dim">
+      <p className="op-reveal op-reveal-1 text-xs font-semibold tracking-[0.3em] text-amber">LIVE FEED</p>
+      <h1 className="op-reveal op-reveal-2 mt-3 font-display text-4xl text-text sm:text-5xl">Tech News Hub</h1>
+      <p className="op-reveal op-reveal-3 mt-6 max-w-2xl text-base text-text-dim">
         Live technology headlines, refreshed continuously. We link out to the
         original publisher for every story — this hub curates, it doesn&apos;t
         republish.
