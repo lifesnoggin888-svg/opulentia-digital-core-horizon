@@ -21,23 +21,23 @@ export default async function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/70 to-obsidian" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
+          <p className="op-reveal op-reveal-1 mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
             OPULENTIA DIGITAL CORE HORIZON · RC-9802444
           </p>
-          <h1 className="font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
+          <h1 className="op-reveal op-reveal-2 font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
             The intelligent coordination layer for
             <br />
             Africa&apos;s distributed-energy infrastructure
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-text-dim">
+          <p className="op-reveal op-reveal-3 mx-auto mt-6 max-w-xl text-base text-text-dim">
             <span className="text-text">AetherGrid</span>, our flagship platform, coordinates
             solar, battery, mini-grid, and hybrid-energy assets through forecasting,
             optimization, autonomous coordination, and governed human override.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="op-reveal op-reveal-4 mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/services/aethergrid"
-              className="rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
+              className="op-btn-ripple rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
             >
               EXPLORE AETHERGRID
             </Link>
@@ -50,7 +50,7 @@ export default async function Home() {
               View Live Demo
             </a>
           </div>
-          <p className="mt-4 text-xs text-text-dim">
+          <p className="op-reveal op-reveal-4 mt-4 text-xs text-text-dim">
             Current build: a functioning simulation and coordination prototype — not yet a
             deployed African energy network.
           </p>
