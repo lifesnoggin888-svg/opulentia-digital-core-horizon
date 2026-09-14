@@ -57,26 +57,42 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-12 text-center">
+      <section className="relative mx-auto max-w-7xl overflow-hidden px-6 py-24">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(900px 400px at 50% 0%, rgba(255,191,0,0.08), transparent)",
+          }}
+        />
+        <div className="relative mb-16 text-center">
           <p className="text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
-          <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">AetherGrid</h2>
+          <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
+            How AetherGrid coordinates a grid
+          </h2>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-4 lg:grid-cols-7">
+          <div
+            className="pointer-events-none absolute left-0 right-0 top-6 hidden lg:block"
+            style={{ height: 2, background: "linear-gradient(90deg, transparent, var(--color-amber) 8%, var(--color-amber) 92%, transparent)" }}
+            aria-hidden
+          />
           {[
             "Telemetry ingestion",
             "Demand forecasting",
-            "Distributed asset coordination",
+            "Asset coordination",
             "Optimization engine",
-            "Governance / human override",
+            "Governance override",
             "Audit trail",
             "Operator intelligence",
-          ].map((capability) => (
-            <div
-              key={capability}
-              className="rounded-md border border-border bg-panel p-5 text-sm text-text-dim"
-            >
-              {capability}
+          ].map((capability, i) => (
+            <div key={capability} className="relative flex flex-col items-center text-center">
+              <div className="op-node op-pulse" style={{ animationDelay: `${i * 0.25}s` }}>
+                {i + 1}
+              </div>
+              <span className="mt-3 text-xs font-medium leading-snug text-text sm:text-sm">
+                {capability}
+              </span>
             </div>
           ))}
         </div>
@@ -103,9 +119,9 @@ export default async function Home() {
                 <Link
                   key={p.slug}
                   href={`/services/${p.slug}`}
-                  className="group flex flex-col rounded-md border border-border bg-panel p-6 transition hover:border-amber"
+                  className="op-card group flex flex-col p-6"
                 >
-                  <span className="text-3xl text-amber">{p.icon}</span>
+                  <span className="op-badge">{p.icon}</span>
                   <h3 className="mt-4 font-display text-lg text-text">{p.name}</h3>
                   <p className="mt-2 flex-1 text-sm text-text-dim">{p.summary}</p>
                   <span className="mt-4 text-xs font-semibold tracking-wide text-amber group-hover:underline">
