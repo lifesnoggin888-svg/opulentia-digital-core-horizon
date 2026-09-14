@@ -57,7 +57,8 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-7xl overflow-hidden px-6 py-24">
+      <section className="op-circuit relative overflow-hidden py-24">
+        <div className="op-scanline" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -65,6 +66,7 @@ export default async function Home() {
               "radial-gradient(900px 400px at 50% 0%, rgba(255,191,0,0.08), transparent)",
           }}
         />
+        <div className="relative mx-auto max-w-7xl px-6">
         <div className="relative mb-16 text-center">
           <p className="text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
           <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
@@ -87,14 +89,17 @@ export default async function Home() {
             "Operator intelligence",
           ].map((capability, i) => (
             <div key={capability} className="relative flex flex-col items-center text-center">
-              <div className="op-node op-pulse" style={{ animationDelay: `${i * 0.25}s` }}>
-                {i + 1}
+              <div className={i === 0 ? "op-ping relative" : "relative"}>
+                <div className="op-node op-hex op-pulse" style={{ animationDelay: `${i * 0.25}s` }}>
+                  {i + 1}
+                </div>
               </div>
               <span className="mt-3 text-xs font-medium leading-snug text-text sm:text-sm">
                 {capability}
               </span>
             </div>
           ))}
+        </div>
         </div>
       </section>
 
