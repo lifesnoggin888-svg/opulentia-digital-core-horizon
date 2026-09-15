@@ -22,15 +22,15 @@ export default async function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/70 to-obsidian" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <Image
-            src="/logo-hero.jpg"
+            src="/logo-hero.png"
             alt="Opulentia Digital Core Horizon"
-            width={120}
-            height={120}
+            width={352}
+            height={192}
             priority
-            className="op-reveal op-reveal-1 mx-auto mb-6 h-24 w-24 rounded-full object-cover shadow-[0_0_60px_rgba(255,191,0,0.25)] sm:h-28 sm:w-28"
+            className="op-reveal op-reveal-1 mx-auto mb-6 h-auto w-56 object-contain sm:w-64"
           />
           <p className="op-reveal op-reveal-1 mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
-            OPULENTIA DIGITAL CORE HORIZON · RC-9802444
+            RC-9802444
           </p>
           <h1 className="op-reveal op-reveal-2 font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
             The intelligent coordination layer for

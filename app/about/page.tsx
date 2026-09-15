@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = { title: "About — Opulentia Digital Core Horizon" };
 
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-24">
+      <Image
+        src="/logo-hero.png"
+        alt="Opulentia Digital Core Horizon"
+        width={352}
+        height={192}
+        className="op-reveal op-reveal-1 mb-8 h-auto w-48 object-contain"
+      />
       <p className="op-reveal op-reveal-1 text-xs font-semibold tracking-[0.3em] text-amber">ABOUT</p>
       <h1 className="op-reveal op-reveal-2 mt-3 font-display text-4xl text-text sm:text-5xl">
         Opulentia Digital Core Horizon
