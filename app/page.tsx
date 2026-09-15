@@ -21,6 +21,14 @@ export default async function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/70 to-obsidian" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <Image
+            src="/logo-hero.jpg"
+            alt="Opulentia Digital Core Horizon"
+            width={120}
+            height={120}
+            priority
+            className="op-reveal op-reveal-1 mx-auto mb-6 h-24 w-24 rounded-full object-cover shadow-[0_0_60px_rgba(255,191,0,0.25)] sm:h-28 sm:w-28"
+          />
           <p className="op-reveal op-reveal-1 mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
             OPULENTIA DIGITAL CORE HORIZON · RC-9802444
           </p>
