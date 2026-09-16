@@ -5,21 +5,28 @@ export const metadata: Metadata = { title: "About — Opulentia Digital Core Hor
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-24">
-      <Image
-        src="/logo-hero.png"
-        alt="Opulentia Digital Core Horizon"
-        width={352}
-        height={192}
-        className="op-reveal op-reveal-1 mb-8 h-auto w-48 object-contain"
-      />
-      <p className="op-reveal op-reveal-1 text-xs font-semibold tracking-[0.3em] text-amber">ABOUT</p>
-      <h1 className="op-reveal op-reveal-2 mt-3 font-display text-4xl text-text sm:text-5xl">
-        Opulentia Digital Core Horizon
-      </h1>
-      <p className="op-reveal op-reveal-2 mt-2 text-sm text-text-dim">Registration RC-9802444</p>
+    <main>
+      <section className="relative overflow-hidden op-circuit py-16 sm:py-20">
+        <div className="op-scanline" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
+          <Image
+            src="/logo-hero.png"
+            alt="Opulentia Digital Core Horizon"
+            width={352}
+            height={192}
+            priority
+            className="op-reveal op-reveal-1 mb-8 h-auto w-64 object-contain sm:w-80 md:w-96"
+          />
+          <p className="op-reveal op-reveal-1 text-xs font-semibold tracking-[0.3em] text-amber">ABOUT</p>
+          <h1 className="op-reveal op-reveal-2 mt-3 font-display text-4xl text-text sm:text-5xl">
+            Opulentia Digital Core Horizon
+          </h1>
+          <p className="op-reveal op-reveal-2 mt-2 text-sm text-text-dim">Registration RC-9802444</p>
+        </div>
+      </section>
 
-      <div className="op-reveal op-reveal-3 mt-10 space-y-6 text-base leading-relaxed text-text-dim">
+      <div className="mx-auto max-w-4xl px-6 py-16">
+      <div className="op-reveal op-reveal-3 space-y-6 text-base leading-relaxed text-text-dim">
         <p>
           Opulentia Digital Core Horizon is an enterprise technology company
           building AI orchestration, analytics, cloud infrastructure, and
@@ -54,6 +61,7 @@ export default function AboutPage() {
             <p className="mt-2 text-sm text-text-dim">{v.body}</p>
           </div>
         ))}
+      </div>
       </div>
     </main>
   );
