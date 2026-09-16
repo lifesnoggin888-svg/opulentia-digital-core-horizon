@@ -8,6 +8,14 @@ export type Product = {
   capabilities: string[];
   liveUrl?: string;
   liveNote?: string;
+  /** Dense, single-paragraph mechanism statement — what it actually does, concrete verbs. */
+  mechanism?: string;
+  /** Italic honest-status line — what stage it's actually at. */
+  buildStatus?: string;
+  /** Monospace technical-detail line — a real implementation fact. */
+  signalLine?: string;
+  /** CTA label, e.g. "Explore AetherGrid →". */
+  ctaLabel?: string;
 };
 
 export const products: Product[] = [
@@ -32,6 +40,13 @@ export const products: Product[] = [
     liveUrl: "https://aethergrid-delta.vercel.app",
     liveNote:
       "The live demo requires signing in — it is a working operator console, not a public marketing page.",
+    mechanism:
+      "It ingests telemetry from solar, battery, mini-grid, and hybrid-energy assets, forecasts near-term demand across every connected site, and proposes an asset-coordination and capacity plan through its optimization engine — routing every autonomous decision through a governance layer where an operator retains pause/override authority, with the full reasoning chain written to an audit trail and surfaced on an operator intelligence dashboard.",
+    buildStatus:
+      "Current build: a functioning simulation and coordination prototype — not yet a deployed African energy network.",
+    signalLine:
+      "7-stage coordination pipeline // Telemetry ingestion → Demand forecasting → Asset coordination → Optimization engine → Governance override → Audit trail → Operator intelligence",
+    ctaLabel: "Explore AetherGrid →",
   },
   {
     slug: "agentproof",
@@ -52,6 +67,13 @@ export const products: Product[] = [
     ],
     liveUrl: "https://agentproof-source.vercel.app",
     liveNote: "The live app runs real simulations and a sample readiness report — no account required.",
+    mechanism:
+      "It runs controlled simulations and adversarial scenarios — prompt injection, sensitive-data exposure, outage, impersonation — against a declared agent contract, scores authority, security, reliability, and cost from the results, and hashes every report with a SHA-256 canonical hash before persisting it to an append-only Supabase-backed record that can be independently retrieved and integrity-verified.",
+    buildStatus:
+      "Current build: a real, working simulation and reporting tool with a verified persistence round trip in production — not an enterprise-scale deployment with named customers.",
+    signalLine:
+      "Supabase-backed append-only ledger // SHA-256 canonical hash on write, integrity-verified on read",
+    ctaLabel: "Open AgentProof →",
   },
   {
     slug: "horizon-intelligence",

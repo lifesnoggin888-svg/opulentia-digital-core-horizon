@@ -58,6 +58,17 @@ export default function AboutPage() {
                 and auditability as defaults, not afterthoughts.
               </p>
               <p>
+                We build two real products, not a portfolio of announcements.{" "}
+                <span className="text-text">AetherGrid</span>, our flagship, is an AI
+                coordination layer for Africa&apos;s distributed-energy infrastructure — it
+                forecasts demand, coordinates solar, battery, mini-grid, and hybrid assets,
+                and runs an optimization and governed-override loop with a full audit trail.{" "}
+                <span className="text-text">AgentProof</span>, our second product, is an
+                assurance and reproducibility ledger for AI-agent outputs — it runs
+                simulations and adversarial scenarios against a declared agent contract and
+                hashes every result to an append-only, integrity-verified record.
+              </p>
+              <p>
                 Alongside our platform, we run a technology news hub — because
                 staying informed on the pace of change in enterprise AI is part of
                 how we build responsibly.
@@ -76,7 +87,8 @@ export default function AboutPage() {
                 { k: "JURISDICTION", v: "Nigeria" },
                 { k: "STAGE", v: "Pre-seed" },
                 { k: "FLAGSHIP", v: "AetherGrid" },
-                { k: "BUILD STATUS", v: "Simulation prototype" },
+                { k: "SECOND PRODUCT", v: "AgentProof" },
+                { k: "BUILD STATUS", v: "Simulation & assurance prototypes" },
               ].map((r) => (
                 <div key={r.k} className="op-term-row">
                   <span className="op-mono w-28 shrink-0 text-[10px] text-bronze">{r.k}</span>

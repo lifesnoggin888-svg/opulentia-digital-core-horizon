@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const siteUrl = "https://opulentia-digital.vercel.app";
 const description =
-  "Opulentia Digital Core Horizon (RC-9802444) — the intelligent coordination layer for Africa's distributed-energy infrastructure. Flagship platform: AetherGrid.";
+  "Opulentia Digital Core Horizon (RC-9802444) — the intelligent coordination layer for Africa's distributed-energy infrastructure. Flagship platform: AetherGrid. Second product: AgentProof, an assurance and reproducibility ledger for AI-agent outputs.";
 
 export const metadata: Metadata = {
   title: "Opulentia Digital Core Horizon",

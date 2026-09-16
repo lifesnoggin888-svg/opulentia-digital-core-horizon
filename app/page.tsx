@@ -2,11 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsTicker from "@/components/NewsTicker";
 import CoordinationConsole from "@/components/CoordinationConsole";
-import { products } from "@/lib/products";
+import ProductBlock from "@/components/ProductBlock";
+import { products, getProduct } from "@/lib/products";
 import { fetchTechNews } from "@/lib/news";
 
 export default async function Home() {
   const news = await fetchTechNews(4);
+  const aethergrid = getProduct("aethergrid")!;
+  const agentproof = getProduct("agentproof")!;
+  const supportingModules = products.filter(
+    (p) => p.slug !== "aethergrid" && p.slug !== "agentproof"
+  );
 
   return (
     <main>
@@ -88,16 +94,24 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* AetherGrid — flagship product narrative block. Full mechanism, honest
+          build status, and technical detail, matching the sister-site (RoyalGrid)
+          copy format so this product gets illustrative depth, not a teaser card. */}
+      <section className="relative mx-auto max-w-5xl px-6 py-20">
+        <ProductBlock product={aethergrid} eyebrow="FLAGSHIP PLATFORM" index="PRODUCT_01" />
+      </section>
+
       {/* Illustrative coordination console — a densely-composed, clearly-labeled
           conceptual view of pipeline structure. Built from labels in the product
           model, not from live telemetry off deployed hardware. No fabricated
-          measured values (kW, Hz, SOC%, uptime%) appear anywhere in this panel. */}
+          measured values (kW, Hz, SOC%, uptime%) appear anywhere in this panel.
+          AetherGrid-specific — everything in this section belongs to AetherGrid. */}
       <section className="op-circuit relative overflow-hidden border-y border-border bg-panel/30 py-20">
         <div className="op-scanline" />
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mb-8 text-center">
             <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">
-              SIMULATION &amp; COORDINATION PROTOTYPE
+              AETHERGRID · SIMULATION &amp; COORDINATION PROTOTYPE
             </p>
             <h2 className="mt-3 font-display text-2xl text-text sm:text-3xl">
               An illustrative view of how AetherGrid reasons
@@ -123,7 +137,7 @@ export default async function Home() {
         />
         <div className="relative mx-auto max-w-7xl px-6">
         <div className="relative mb-16 text-center">
-          <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
+          <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">AETHERGRID · FLAGSHIP PLATFORM</p>
           <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
             How AetherGrid coordinates a grid
           </h2>
@@ -164,6 +178,23 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* AgentProof — second product narrative block, immediately after the
+          AetherGrid pipeline. Same visual weight and copy depth as AetherGrid's
+          block above — this is a genuine second-product section, not an
+          afterthought in a small card grid. */}
+      <section className="relative overflow-hidden border-y border-border bg-panel/30 py-20">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(900px 400px at 50% 0%, rgba(103,232,249,0.06), transparent)",
+          }}
+        />
+        <div className="relative mx-auto max-w-5xl px-6">
+          <ProductBlock product={agentproof} eyebrow="SECOND PRODUCT" index="PRODUCT_02" />
+        </div>
+      </section>
+
       <section className="border-y border-border bg-panel/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
@@ -171,17 +202,16 @@ export default async function Home() {
               THE CORE TECHNOLOGY STACK
             </p>
             <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
-              What AetherGrid runs on
+              What AetherGrid and AgentProof run on
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-text-dim">
-              AetherGrid is built on Opulentia&apos;s broader enterprise platform — orchestration,
-              analytics, cloud infrastructure, and digital trust, engineered as one core.
+              Both AetherGrid and AgentProof are built on Opulentia&apos;s broader enterprise
+              platform — orchestration, analytics, cloud infrastructure, and digital trust,
+              engineered as one core.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {products
-              .filter((p) => p.slug !== "aethergrid")
-              .map((p, i) => (
+            {supportingModules.map((p, i) => (
                 <Link
                   key={p.slug}
                   href={`/services/${p.slug}`}
