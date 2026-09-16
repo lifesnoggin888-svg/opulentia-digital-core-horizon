@@ -55,6 +55,21 @@ export default async function Home() {
             Current build: a functioning simulation and coordination prototype — not yet a
             deployed African energy network.
           </p>
+
+          <div className="op-reveal op-reveal-4 op-hud-frame op-glass mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-x-6 gap-y-3 px-6 py-4">
+            {[
+              { k: "ENTITY", v: "RC-9802444" },
+              { k: "JURISDICTION", v: "NIGERIA" },
+              { k: "STAGE", v: "PRE-SEED" },
+              { k: "BUILD", v: "SIMULATION" },
+            ].map((f) => (
+              <div key={f.k} className="flex items-center gap-2">
+                <span className="op-status-dot op-status-dot--idle" aria-hidden />
+                <span className="op-mono text-[10px] tracking-[0.15em] text-text-dim">{f.k}</span>
+                <span className="op-mono text-[10px] font-semibold tracking-[0.1em] text-amber">{f.v}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

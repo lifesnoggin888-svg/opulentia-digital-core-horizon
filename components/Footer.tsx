@@ -4,6 +4,24 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-panel">
       <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="mb-10 flex flex-wrap items-center gap-3 border-b border-border pb-8">
+          <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden className="shrink-0">
+            <polygon
+              points="14,1 26,7.5 26,20.5 14,27 2,20.5 2,7.5"
+              fill="none"
+              stroke="var(--color-amber)"
+              strokeWidth="1.5"
+            />
+            <polygon points="14,7 20,10.5 20,17.5 14,21 8,17.5 8,10.5" fill="var(--color-amber)" opacity="0.85" />
+          </svg>
+          <span className="op-mono text-[10px] tracking-[0.2em] text-text-dim">
+            AETHERGRID · A FLAGSHIP SYSTEM OF OPULENTIA DIGITAL CORE HORIZON
+          </span>
+          <span className="op-status-dot op-status-dot--review ml-auto" aria-hidden />
+          <span className="op-mono text-[10px] tracking-[0.15em] text-amber">
+            SIMULATION STAGE — PRE-SEED
+          </span>
+        </div>
         <div className="grid gap-10 md:grid-cols-4">
           <div>
             <p className="font-display text-sm tracking-wide text-text">

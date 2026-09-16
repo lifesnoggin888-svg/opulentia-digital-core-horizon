@@ -29,28 +29,51 @@ export default function AboutPage() {
       </section>
 
       <div className="mx-auto max-w-4xl px-6 py-16">
-        <div className="op-reveal op-reveal-3 op-glass op-hud-frame p-6 sm:p-8">
-          <p className="op-mono mb-4 text-xs font-semibold tracking-[0.25em] text-signal">
-            COMPANY OVERVIEW
-          </p>
-          <div className="space-y-6 text-base leading-relaxed text-text-dim">
-            <p>
-              Opulentia Digital Core Horizon is an enterprise technology company
-              building AI orchestration, analytics, cloud infrastructure, and
-              digital trust tooling as a single, coherent platform — engineered for
-              organizations that need real operational readiness, not a demo.
+        <div className="op-reveal op-reveal-3 grid gap-6 lg:grid-cols-5">
+          <div className="op-glass op-hud-frame p-6 sm:p-8 lg:col-span-3">
+            <p className="op-mono mb-4 text-xs font-semibold tracking-[0.25em] text-signal">
+              COMPANY OVERVIEW
             </p>
-            <p>
-              We are early. This site does not claim scale, deployments, or user
-              counts we have not earned yet. What we do claim is engineering
-              discipline: every product is built with explainability, security,
-              and auditability as defaults, not afterthoughts.
+            <div className="space-y-6 text-base leading-relaxed text-text-dim">
+              <p>
+                Opulentia Digital Core Horizon is an enterprise technology company
+                building AI orchestration, analytics, cloud infrastructure, and
+                digital trust tooling as a single, coherent platform — engineered for
+                organizations that need real operational readiness, not a demo.
+              </p>
+              <p>
+                We are early. This site does not claim scale, deployments, or user
+                counts we have not earned yet. What we do claim is engineering
+                discipline: every product is built with explainability, security,
+                and auditability as defaults, not afterthoughts.
+              </p>
+              <p>
+                Alongside our platform, we run a technology news hub — because
+                staying informed on the pace of change in enterprise AI is part of
+                how we build responsibly.
+              </p>
+            </div>
+          </div>
+
+          <div className="op-term-panel op-hud-frame p-6 sm:p-8 lg:col-span-2">
+            <p className="op-mono mb-4 text-xs font-semibold tracking-[0.2em] text-amber">
+              ENTITY REGISTRY
             </p>
-            <p>
-              Alongside our platform, we run a technology news hub — because
-              staying informed on the pace of change in enterprise AI is part of
-              how we build responsibly.
-            </p>
+            <div>
+              {[
+                { k: "ENTITY", v: "Opulentia Digital Core Horizon" },
+                { k: "REGISTRATION", v: "RC-9802444" },
+                { k: "JURISDICTION", v: "Nigeria" },
+                { k: "STAGE", v: "Pre-seed" },
+                { k: "FLAGSHIP", v: "AetherGrid" },
+                { k: "BUILD STATUS", v: "Simulation prototype" },
+              ].map((r) => (
+                <div key={r.k} className="op-term-row">
+                  <span className="op-mono w-28 shrink-0 text-[10px] text-bronze">{r.k}</span>
+                  <span className="text-[12px] text-text">{r.v}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
