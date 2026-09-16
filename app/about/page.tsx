@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ComplianceReadout from "@/components/ComplianceReadout";
 
 export const metadata: Metadata = { title: "About — Opulentia Digital Core Horizon" };
@@ -6,13 +7,22 @@ export const metadata: Metadata = { title: "About — Opulentia Digital Core Hor
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative overflow-hidden op-circuit py-16 sm:py-20">
+      <section className="relative overflow-hidden op-circuit py-20 sm:py-28">
+        {/* Page-level banner sharing the homepage hero's cinematic poster
+            treatment — smaller and quieter, but the same visual system. */}
+        <Image
+          src="/hero-poster.jpg"
+          alt=""
+          fill
+          className="object-cover object-[50%_20%] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/80 via-obsidian/90 to-obsidian" />
         <div className="op-scanline" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(900px 400px at 50% 0%, rgba(232,163,61,0.08), transparent)",
+              "radial-gradient(900px 400px at 50% 0%, rgba(155,92,246,0.14), transparent)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-4xl px-6">

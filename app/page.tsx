@@ -12,25 +12,37 @@ export default async function Home() {
     <main>
       <NewsTicker />
 
-      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-obsidian">
+        {/* Cinematic poster render of the Opulentia crystal emblem — full-bleed,
+            darkened and gradient-overlaid so headline copy stays legible at
+            every viewport, never an image "slapped behind" existing text. */}
         <Image
-          src="/hero-datacenter.jpg"
+          src="/hero-poster.jpg"
           alt=""
           fill
           priority
-          className="object-cover opacity-30"
+          className="object-cover object-center opacity-70 [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_92%)] sm:opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/80 to-obsidian" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/55 via-obsidian/55 to-obsidian" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(1100px 520px at 50% 38%, rgba(155,92,246,0.16), transparent)",
+          }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pt-16 pb-10 text-center sm:pt-24">
           <p className="op-reveal op-reveal-1 op-mono mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
-            RC-9802444
+            RC-9802444 · CORE HORIZON
           </p>
-          <h1 className="op-reveal op-reveal-2 font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
+          <h1 className="op-reveal op-reveal-2 font-display text-4xl leading-tight tracking-tight text-text drop-shadow-[0_4px_28px_rgba(10,7,18,0.85)] sm:text-5xl md:text-6xl">
             The intelligent coordination layer for
             <br />
             Africa&apos;s distributed-energy infrastructure
           </h1>
-          <p className="op-reveal op-reveal-3 mx-auto mt-6 max-w-xl text-base text-text-dim">
+          <p className="op-reveal op-reveal-3 mx-auto mt-6 max-w-xl text-base text-text-dim drop-shadow-[0_2px_12px_rgba(10,7,18,0.9)]">
             <span className="text-text">AetherGrid</span>, our flagship platform, coordinates
             solar, battery, mini-grid, and hybrid-energy assets through forecasting,
             optimization, autonomous coordination, and governed human override.
@@ -46,7 +58,7 @@ export default async function Home() {
               href="https://aethergrid-delta.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-[2px] border border-border px-8 py-3 text-sm font-semibold tracking-wide text-text transition hover:border-amber hover:text-amber"
+              className="rounded-[2px] border border-text-dim/40 bg-obsidian/30 px-8 py-3 text-sm font-semibold tracking-wide text-text backdrop-blur-sm transition hover:border-amber hover:text-amber"
             >
               View Live Demo
             </a>
@@ -103,7 +115,7 @@ export default async function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(900px 400px at 50% 0%, rgba(232,163,61,0.08), transparent)",
+              "radial-gradient(900px 400px at 50% 0%, rgba(155,92,246,0.08), transparent)",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6">

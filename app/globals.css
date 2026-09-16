@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* AetherGrid Command Core palette */
-  --color-obsidian: #0b0b0d;
-  --color-panel: #131316;
-  --color-panel-2: #19191c;
-  --color-border: #2c2c30;
-  --color-amber: #e8a33d;
-  --color-amber-dim: #b3792a;
-  --color-bronze: #8a5a2b;
-  --color-signal: #3ddc97;
-  --color-signal-dim: #2aa876;
-  --color-text: #f5f6f8;
-  --color-text-dim: #a3a3ab;
+  /* Core Horizon jewel palette — sampled from the Opulentia crystal emblem:
+     near-black violet void, deep amethyst glow, copper/rose-gold facets,
+     cool cyan-white circuit accents. Token NAMES kept stable for the whole
+     app (--color-amber, --color-bronze, --color-signal, …) — only the hues
+     changed, so every existing Tailwind class (bg-amber, text-bronze, etc.)
+     cascades into the new theme with no per-component edits. */
+  --color-obsidian: #0a0712;
+  --color-panel: #140f20;
+  --color-panel-2: #1b1329;
+  --color-border: #362a48;
+  --color-amber: #9b5cf6;
+  --color-amber-dim: #7c3aed;
+  --color-bronze: #c98b5f;
+  --color-signal: #67e8f9;
+  --color-signal-dim: #22d3ee;
+  --color-text: #f6f3fb;
+  --color-text-dim: #ad9fc9;
 
   /* legacy aliases kept for gradual migration */
   --color-amber-legacy: var(--color-amber);
@@ -84,7 +89,7 @@ body {
 .op-card:hover {
   transform: translateY(-3px);
   border-color: var(--color-amber);
-  box-shadow: 0 18px 36px -14px rgba(232, 163, 61, 0.25);
+  box-shadow: 0 18px 36px -14px rgba(155, 92, 246, 0.25);
 }
 
 .op-badge {
@@ -97,7 +102,7 @@ body {
   background: linear-gradient(135deg, var(--color-amber), var(--color-bronze));
   color: var(--color-obsidian);
   font-size: 1.15rem;
-  box-shadow: 0 0 24px rgba(232, 163, 61, 0.35);
+  box-shadow: 0 0 24px rgba(155, 92, 246, 0.35);
   flex-shrink: 0;
 }
 
@@ -115,7 +120,7 @@ body {
   font-size: 0.875rem;
   background: linear-gradient(135deg, var(--color-amber), var(--color-bronze));
   color: var(--color-obsidian);
-  box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 28px rgba(232, 163, 61, 0.55);
+  box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 28px rgba(155, 92, 246, 0.55);
 }
 
 .op-pulse {
@@ -123,8 +128,8 @@ body {
 }
 
 @keyframes op-pulse {
-  0%, 100% { box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 24px rgba(232, 163, 61, 0.4); }
-  50% { box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 40px rgba(232, 163, 61, 0.75); }
+  0%, 100% { box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 24px rgba(155, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 0 6px var(--color-obsidian), 0 0 40px rgba(155, 92, 246, 0.75); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -137,7 +142,7 @@ body {
 }
 
 /* -------------------------------------------------------------------- */
-/* Command-core HUD system — obsidian/amber grid console aesthetic       */
+/* Command-core HUD system — violet/copper jewel-tone console aesthetic  */
 /* -------------------------------------------------------------------- */
 
 /* Circuit lattice — layered via a pseudo-element so it never competes
@@ -150,8 +155,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(232, 163, 61, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 163, 61, 0.09) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(155, 92, 246, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 92, 246, 0.09) 1px, transparent 1px);
   background-size: 44px 44px;
   pointer-events: none;
 }
@@ -170,7 +175,7 @@ body {
   left: 0;
   right: 0;
   height: 140px;
-  background: linear-gradient(180deg, transparent, rgba(232, 163, 61, 0.14) 50%, transparent);
+  background: linear-gradient(180deg, transparent, rgba(155, 92, 246, 0.14) 50%, transparent);
   animation: op-scan 7s linear infinite;
 }
 
@@ -213,14 +218,14 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 2px;
-  border: 1px solid rgba(232, 163, 61, 0.5);
-  background: linear-gradient(160deg, rgba(232, 163, 61, 0.14), rgba(11, 11, 13, 0.72));
+  border: 1px solid rgba(155, 92, 246, 0.5);
+  background: linear-gradient(160deg, rgba(155, 92, 246, 0.14), rgba(10, 7, 18, 0.72));
   backdrop-filter: blur(16px) saturate(1.6);
   -webkit-backdrop-filter: blur(16px) saturate(1.6);
   box-shadow:
-    0 0 0 1px rgba(232, 163, 61, 0.14),
+    0 0 0 1px rgba(155, 92, 246, 0.14),
     0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
-    0 24px 60px -20px rgba(232, 163, 61, 0.3),
+    0 24px 60px -20px rgba(155, 92, 246, 0.3),
     0 4px 16px -6px rgba(0, 0, 0, 0.5);
 }
 
@@ -266,7 +271,7 @@ body {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 
-/* Signal-green marker — reserved for explicitly-labeled "illustrative"
+/* Signal-cyan marker — reserved for explicitly-labeled "illustrative"
    or "prototype" UI elements, never used to imply live production data. */
 .op-signal-dot {
   display: inline-block;
@@ -274,7 +279,7 @@ body {
   height: 8px;
   border-radius: 9999px;
   background: var(--color-signal);
-  box-shadow: 0 0 8px 2px rgba(61, 220, 151, 0.6);
+  box-shadow: 0 0 8px 2px rgba(103, 232, 249, 0.6);
 }
 
 .op-mono {
@@ -308,7 +313,7 @@ body {
   width: 0;
   height: 0;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(11, 11, 13, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(10, 7, 18, 0.35), transparent 70%);
   transform: translate(-50%, -50%);
   transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
   opacity: 0;
@@ -380,12 +385,12 @@ body {
 
 .op-status-dot--nominal {
   background: var(--color-signal);
-  box-shadow: 0 0 6px 1px rgba(61, 220, 151, 0.55);
+  box-shadow: 0 0 6px 1px rgba(103, 232, 249, 0.55);
 }
 
 .op-status-dot--review {
   background: var(--color-amber);
-  box-shadow: 0 0 6px 1px rgba(232, 163, 61, 0.55);
+  box-shadow: 0 0 6px 1px rgba(155, 92, 246, 0.55);
 }
 
 .op-status-dot--idle {

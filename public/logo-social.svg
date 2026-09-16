@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
     <linearGradient id="op-amber" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFBF00"/>
-      <stop offset="100%" stop-color="#B3860A"/>
+      <stop offset="0%" stop-color="#C98B5F"/>
+      <stop offset="100%" stop-color="#9B5CF6"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="96" fill="#0A0D14"/>
+  <rect width="512" height="512" rx="96" fill="#0A0712"/>
   <path d="M256 96L384 176V336L256 416L128 336V176L256 96Z" stroke="url(#op-amber)" stroke-width="10"/>
   <path d="M280 160L192 280H248L232 352L336 224H272L280 160Z" fill="url(#op-amber)"/>
   <text x="256" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#F5F6F8" letter-spacing="4">AETHERGRID</text>
