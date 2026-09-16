@@ -54,22 +54,19 @@ export default async function ProductPage({ params }: { params: Params }) {
         <Link href="/contact" className="op-btn-ripple rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim">
           Talk to the Team
         </Link>
-        {product.slug === "aethergrid" && (
+        {product.liveUrl && (
           <a
-            href="https://aethergrid-delta.vercel.app"
+            href={product.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-sm border border-border px-8 py-3 text-sm font-semibold tracking-wide text-text transition hover:border-amber hover:text-amber"
           >
-            View Live Coordination Demo &rarr;
+            {product.slug === "aethergrid" ? "View Live Coordination Demo" : "Open Live App"} &rarr;
           </a>
         )}
       </div>
-      {product.slug === "aethergrid" && (
-        <p className="mt-3 text-xs text-text-dim">
-          The live demo requires signing in — it is a working operator console, not a public
-          marketing page.
-        </p>
+      {product.liveNote && (
+        <p className="mt-3 text-xs text-text-dim">{product.liveNote}</p>
       )}
     </main>
   );

@@ -6,6 +6,8 @@ export type Product = {
   summary: string;
   description: string;
   capabilities: string[];
+  liveUrl?: string;
+  liveNote?: string;
 };
 
 export const products: Product[] = [
@@ -27,6 +29,29 @@ export const products: Product[] = [
       "Full audit trail on every coordination decision",
       "Operator intelligence dashboard for real-time visibility",
     ],
+    liveUrl: "https://aethergrid-delta.vercel.app",
+    liveNote:
+      "The live demo requires signing in — it is a working operator console, not a public marketing page.",
+  },
+  {
+    slug: "agentproof",
+    name: "AgentProof",
+    tagline: "Reliability infrastructure for AI agents before they touch production",
+    icon: "✓",
+    summary:
+      "AgentProof runs controlled simulations and adversarial scenarios against autonomous AI agents, scoring authority, security, reliability, and cost into a readiness report before an agent gets production access.",
+    description:
+      "AgentProof is Opulentia Digital Core Horizon's AI-agent assurance product, alongside AetherGrid. It executes authority tests, adversarial scenarios, and operational-economics checks against a declared agent contract, capturing every failure with the exact decision, tool call, and policy result so it can be replayed and turned into a regression test. Reports persist to Supabase with a SHA-256 canonical-hash integrity check on every write. Current build: a real, working simulation and reporting tool with a verified persistence round trip in production, not an enterprise-scale deployment with named customers.",
+    capabilities: [
+      "Authority testing against declared tool permissions",
+      "Adversarial scenarios: prompt injection, sensitive-data exposure, outage, impersonation",
+      "Operational-economics scoring: success rate, p95 latency, projected monthly cost",
+      "Separate security, reliability, policy, and cost scores per report",
+      "Every failure captured as a replayable trace and regression test",
+      "Append-only reports with SHA-256 integrity verification on read",
+    ],
+    liveUrl: "https://agentproof-source.vercel.app",
+    liveNote: "The live app runs real simulations and a sample readiness report — no account required.",
   },
   {
     slug: "horizon-intelligence",
