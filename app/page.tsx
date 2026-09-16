@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NewsTicker from "@/components/NewsTicker";
+import CoordinationConsole from "@/components/CoordinationConsole";
 import { products } from "@/lib/products";
 import { fetchTechNews } from "@/lib/news";
 
@@ -57,47 +58,27 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Illustrative coordination view — a stylized diagram of how the
-          pipeline connects, built from labels in the product model, not
-          from live telemetry off deployed hardware. */}
+      {/* Illustrative coordination console — a densely-composed, clearly-labeled
+          conceptual view of pipeline structure. Built from labels in the product
+          model, not from live telemetry off deployed hardware. No fabricated
+          measured values (kW, Hz, SOC%, uptime%) appear anywhere in this panel. */}
       <section className="op-circuit relative overflow-hidden border-y border-border bg-panel/30 py-20">
         <div className="op-scanline" />
-        <div className="relative mx-auto max-w-5xl px-6">
-          <div className="op-glass op-hud-frame p-6 sm:p-8">
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <span className="op-signal-dot" aria-hidden />
-                <span className="op-mono text-xs font-semibold tracking-[0.2em] text-signal">
-                  ILLUSTRATIVE COORDINATION VIEW
-                </span>
-              </div>
-              <span className="op-mono text-[11px] text-text-dim">
-                Simulation model — not live production telemetry
-              </span>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                { node: "SOLAR_PV_SITE", role: "Generation asset (simulated)" },
-                { node: "BESS_STORAGE", role: "Battery coordination (simulated)" },
-                { node: "MINIGRID_HUB", role: "Demand node (simulated)" },
-              ].map((n) => (
-                <div key={n.node} className="rounded-[2px] border border-border bg-obsidian/60 p-4">
-                  <p className="op-mono text-xs font-semibold tracking-wide text-amber">
-                    {n.node}
-                  </p>
-                  <p className="mt-2 text-xs text-text-dim">{n.role}</p>
-                  <p className="op-mono mt-3 text-[11px] text-bronze">
-                    status: modeled, not deployed
-                  </p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-xs leading-relaxed text-text-dim">
-              This panel illustrates how AetherGrid&apos;s coordination pipeline is designed to
-              connect distributed-energy nodes. It reflects the structure of our simulation and
-              coordination prototype — it does not display readings from real deployed hardware.
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="mb-8 text-center">
+            <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">
+              SIMULATION &amp; COORDINATION PROTOTYPE
+            </p>
+            <h2 className="mt-3 font-display text-2xl text-text sm:text-3xl">
+              An illustrative view of how AetherGrid reasons
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-text-dim">
+              Every panel below is a conceptual model — labeled where it applies as
+              simulated, illustrative, or design intent. None of it is a reading from
+              deployed hardware.
             </p>
           </div>
+          <CoordinationConsole />
         </div>
       </section>
 
@@ -124,22 +105,28 @@ export default async function Home() {
             aria-hidden
           />
           {[
-            "Telemetry ingestion",
-            "Demand forecasting",
-            "Asset coordination",
-            "Optimization engine",
-            "Governance override",
-            "Audit trail",
-            "Operator intelligence",
-          ].map((capability, i) => (
-            <div key={capability} className="relative flex flex-col items-center text-center">
+            { name: "Telemetry ingestion", role: "reads incoming asset data" },
+            { name: "Demand forecasting", role: "models near-term demand" },
+            { name: "Asset coordination", role: "proposes an asset set" },
+            { name: "Optimization engine", role: "drafts a capacity plan" },
+            { name: "Governance override", role: "gates autonomous action" },
+            { name: "Audit trail", role: "logs every decision" },
+            { name: "Operator intelligence", role: "surfaces it to a human" },
+          ].map((stage, i) => (
+            <div
+              key={stage.name}
+              className="group relative flex flex-col items-center text-center transition-transform duration-200 hover:-translate-y-1"
+            >
               <div className={i === 0 ? "op-ping relative" : "relative"}>
                 <div className="op-node op-hex op-pulse" style={{ animationDelay: `${i * 0.25}s` }}>
                   {i + 1}
                 </div>
               </div>
               <span className="mt-3 text-xs font-medium leading-snug text-text sm:text-sm">
-                {capability}
+                {stage.name}
+              </span>
+              <span className="op-mono mt-1 text-[10px] leading-snug text-text-dim opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                {stage.role}
               </span>
             </div>
           ))}
@@ -161,21 +148,35 @@ export default async function Home() {
               analytics, cloud infrastructure, and digital trust, engineered as one core.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {products
               .filter((p) => p.slug !== "aethergrid")
-              .map((p) => (
+              .map((p, i) => (
                 <Link
                   key={p.slug}
                   href={`/services/${p.slug}`}
-                  className="op-card group flex flex-col p-6"
+                  className="op-tech-card group flex flex-col p-5"
                 >
-                  <span className="op-badge">{p.icon}</span>
-                  <h3 className="mt-4 font-display text-lg text-text">{p.name}</h3>
+                  <div className="flex items-center justify-between">
+                    <span className="op-mono text-[10px] text-bronze">
+                      MODULE_{String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="op-status-dot op-status-dot--idle" aria-hidden />
+                  </div>
+                  <div className="mt-4 flex items-center gap-3">
+                    <span className="op-badge shrink-0">{p.icon}</span>
+                    <h3 className="font-display text-base text-text">{p.name}</h3>
+                  </div>
+                  <p className="op-mono mt-3 text-[10px] tracking-wide text-text-dim">
+                    {p.slug.replace(/-/g, "_").toUpperCase()}
+                  </p>
                   <p className="mt-2 flex-1 text-sm text-text-dim">{p.summary}</p>
-                  <span className="mt-4 text-xs font-semibold tracking-wide text-amber group-hover:underline">
-                    Explore Details →
-                  </span>
+                  <div className="op-mono mt-4 flex items-center justify-between border-t border-border pt-3 text-[10px]">
+                    <span className="text-text-dim">SPEC: on file</span>
+                    <span className="font-semibold tracking-wide text-amber group-hover:underline">
+                      DETAILS →
+                    </span>
+                  </div>
                 </Link>
               ))}
           </div>

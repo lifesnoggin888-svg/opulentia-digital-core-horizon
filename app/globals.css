@@ -333,3 +333,118 @@ body {
     transform: none;
   }
 }
+
+/* -------------------------------------------------------------------- */
+/* Terminal / console density system — hairline panels, status dots,     */
+/* monospace readouts. Used only for clearly-labeled illustrative or     */
+/* self-descriptive (non-telemetry) content.                             */
+/* -------------------------------------------------------------------- */
+
+.op-term-panel {
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
+  position: relative;
+}
+
+.op-term-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-amber), transparent 70%);
+  opacity: 0.7;
+}
+
+.op-term-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding: 0.6rem 0;
+}
+
+.op-term-row:first-of-type {
+  border-top: none;
+}
+
+.op-status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+}
+
+.op-status-dot--nominal {
+  background: var(--color-signal);
+  box-shadow: 0 0 6px 1px rgba(61, 220, 151, 0.55);
+}
+
+.op-status-dot--review {
+  background: var(--color-amber);
+  box-shadow: 0 0 6px 1px rgba(232, 163, 61, 0.55);
+}
+
+.op-status-dot--idle {
+  background: var(--color-text-dim);
+  opacity: 0.6;
+}
+
+.op-tech-card {
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(160deg, var(--color-panel-2), var(--color-panel));
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.op-tech-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-amber) 20%, var(--color-amber) 80%, transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.op-tech-card:hover {
+  border-color: var(--color-amber);
+  transform: translateY(-2px);
+}
+
+.op-tech-card:hover::before {
+  opacity: 0.8;
+}
+
+.op-connector-line {
+  stroke: var(--color-amber);
+  stroke-opacity: 0.35;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.op-connector-dash {
+  stroke-dasharray: 4 4;
+  animation: op-dash-flow 3.5s linear infinite;
+}
+
+@keyframes op-dash-flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .op-connector-dash {
+    animation: none;
+  }
+  .op-tech-card:hover {
+    transform: none;
+  }
+}

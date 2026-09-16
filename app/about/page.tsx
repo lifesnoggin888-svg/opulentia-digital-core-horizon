@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ComplianceReadout from "@/components/ComplianceReadout";
 
 export const metadata: Metadata = { title: "About — Opulentia Digital Core Horizon" };
 
@@ -59,23 +60,47 @@ export default function AboutPage() {
           </p>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { title: "Engineering-first", body: "Capability and readiness before claims of scale." },
-              { title: "Security by default", body: "Access control, encryption, and audit logging built in from day one." },
-              { title: "Honest positioning", body: "No fabricated metrics, no invented deployments — ever." },
+              {
+                title: "Engineering-first",
+                body: "Capability and readiness before claims of scale.",
+                tag: "PRINCIPLE",
+              },
+              {
+                title: "Security by default",
+                body: "Access control, encryption, and audit logging built in from day one.",
+                tag: "PRINCIPLE",
+              },
+              {
+                title: "Honest positioning",
+                body: "No fabricated metrics, no invented deployments — ever.",
+                tag: "PRINCIPLE",
+              },
             ].map((v, i) => (
               <div
                 key={v.title}
                 className="op-reveal op-card p-6"
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
-                <span className="op-mono text-[11px] text-bronze">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="op-mono text-[11px] text-bronze">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="op-mono text-[9px] tracking-[0.15em] text-text-dim">
+                    {v.tag}
+                  </span>
+                </div>
                 <h3 className="mt-2 font-display text-base text-text">{v.title}</h3>
                 <p className="mt-2 text-sm text-text-dim">{v.body}</p>
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-12">
+          <p className="op-mono mb-6 text-xs font-semibold tracking-[0.25em] text-amber">
+            GOVERNANCE &amp; COMPLIANCE
+          </p>
+          <ComplianceReadout />
         </div>
       </div>
     </main>
