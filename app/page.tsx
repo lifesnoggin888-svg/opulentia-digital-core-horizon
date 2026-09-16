@@ -20,14 +20,6 @@ export default async function Home() {
           className="object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/70 to-obsidian" />
-        <Image
-          src="/logo-hero.png"
-          alt="Opulentia Digital Core Horizon"
-          width={352}
-          height={192}
-          priority
-          className="op-reveal op-reveal-1 absolute left-6 top-6 z-10 h-auto w-64 object-contain sm:left-10 sm:top-10 sm:w-80 md:w-[26rem]"
-        />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <p className="op-reveal op-reveal-1 mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
             RC-9802444
