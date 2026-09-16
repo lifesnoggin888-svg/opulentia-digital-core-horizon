@@ -9,8 +9,8 @@ export default function Footer() {
             <p className="font-display text-sm tracking-wide text-text">
               OPULENTIA <span className="text-amber">DIGITAL</span>
             </p>
-            <p className="mt-1 text-xs text-text-dim">CORE HORIZON</p>
-            <p className="mt-3 text-xs text-text-dim">Registration RC-9802444</p>
+            <p className="mt-1 font-mono text-xs text-text-dim">CORE HORIZON</p>
+            <p className="mt-3 font-mono text-xs text-text-dim">Registration RC-9802444</p>
             {/* Placeholder social links — point to "#" until real profiles exist. */}
             <div className="mt-4 flex items-center gap-4">
               <a href="#" aria-label="X (Twitter)" className="text-text-dim hover:text-amber">
@@ -52,7 +52,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 border-t border-border pt-6 text-xs text-text-dim">
+        <div className="mt-10 border-t border-border pt-6 font-mono text-xs text-text-dim">
           © {new Date().getFullYear()} Opulentia Digital Core Horizon (RC-9802444). All rights reserved.
         </div>
       </div>

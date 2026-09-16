@@ -17,11 +17,11 @@ export default async function Home() {
           alt=""
           fill
           priority
-          className="object-cover opacity-40"
+          className="object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/70 to-obsidian" />
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/80 to-obsidian" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <p className="op-reveal op-reveal-1 mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
+          <p className="op-reveal op-reveal-1 op-mono mb-4 text-xs font-semibold tracking-[0.3em] text-amber">
             RC-9802444
           </p>
           <h1 className="op-reveal op-reveal-2 font-display text-4xl leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
@@ -37,7 +37,7 @@ export default async function Home() {
           <div className="op-reveal op-reveal-4 mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/services/aethergrid"
-              className="op-btn-ripple rounded-sm bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
+              className="op-btn-ripple rounded-[2px] bg-amber px-8 py-3 text-sm font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
             >
               EXPLORE AETHERGRID
             </Link>
@@ -45,7 +45,7 @@ export default async function Home() {
               href="https://aethergrid-delta.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm border border-border px-8 py-3 text-sm font-semibold tracking-wide text-text transition hover:border-amber hover:text-amber"
+              className="rounded-[2px] border border-border px-8 py-3 text-sm font-semibold tracking-wide text-text transition hover:border-amber hover:text-amber"
             >
               View Live Demo
             </a>
@@ -57,18 +57,62 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Illustrative coordination view — a stylized diagram of how the
+          pipeline connects, built from labels in the product model, not
+          from live telemetry off deployed hardware. */}
+      <section className="op-circuit relative overflow-hidden border-y border-border bg-panel/30 py-20">
+        <div className="op-scanline" />
+        <div className="relative mx-auto max-w-5xl px-6">
+          <div className="op-glass op-hud-frame p-6 sm:p-8">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <span className="op-signal-dot" aria-hidden />
+                <span className="op-mono text-xs font-semibold tracking-[0.2em] text-signal">
+                  ILLUSTRATIVE COORDINATION VIEW
+                </span>
+              </div>
+              <span className="op-mono text-[11px] text-text-dim">
+                Simulation model — not live production telemetry
+              </span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { node: "SOLAR_PV_SITE", role: "Generation asset (simulated)" },
+                { node: "BESS_STORAGE", role: "Battery coordination (simulated)" },
+                { node: "MINIGRID_HUB", role: "Demand node (simulated)" },
+              ].map((n) => (
+                <div key={n.node} className="rounded-[2px] border border-border bg-obsidian/60 p-4">
+                  <p className="op-mono text-xs font-semibold tracking-wide text-amber">
+                    {n.node}
+                  </p>
+                  <p className="mt-2 text-xs text-text-dim">{n.role}</p>
+                  <p className="op-mono mt-3 text-[11px] text-bronze">
+                    status: modeled, not deployed
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-xs leading-relaxed text-text-dim">
+              This panel illustrates how AetherGrid&apos;s coordination pipeline is designed to
+              connect distributed-energy nodes. It reflects the structure of our simulation and
+              coordination prototype — it does not display readings from real deployed hardware.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="op-circuit relative overflow-hidden py-24">
         <div className="op-scanline" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(900px 400px at 50% 0%, rgba(255,191,0,0.08), transparent)",
+              "radial-gradient(900px 400px at 50% 0%, rgba(232,163,61,0.08), transparent)",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6">
         <div className="relative mb-16 text-center">
-          <p className="text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
+          <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">FLAGSHIP PLATFORM</p>
           <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
             How AetherGrid coordinates a grid
           </h2>
@@ -106,7 +150,7 @@ export default async function Home() {
       <section className="border-y border-border bg-panel/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
-            <p className="text-xs font-semibold tracking-[0.3em] text-amber">
+            <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">
               THE CORE TECHNOLOGY STACK
             </p>
             <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
@@ -140,7 +184,7 @@ export default async function Home() {
 
       <section className="border-y border-border bg-panel py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs font-semibold tracking-[0.3em] text-amber">BUILT FOR SCALE</p>
+          <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">BUILT FOR SCALE</p>
           <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
             Engineering Excellence, Enterprise-Ready
           </h2>
@@ -156,7 +200,7 @@ export default async function Home() {
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-10 flex items-end justify-between">
           <div>
-            <p className="text-xs font-semibold tracking-[0.3em] text-amber">LIVE FEED</p>
+            <p className="op-mono text-xs font-semibold tracking-[0.3em] text-amber">NEWS FEED</p>
             <h2 className="mt-3 font-display text-3xl text-text sm:text-4xl">
               Tech News Hub
             </h2>

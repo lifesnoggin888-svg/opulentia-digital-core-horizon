@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import { Tektur, Inter } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ClickSound from "@/components/ClickSound";
 
-const tektur = Tektur({
-  variable: "--font-tektur",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["500", "700", "900"],
+  weight: ["500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 const siteUrl = "https://opulentia-digital.vercel.app";
@@ -45,7 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${tektur.variable} ${inter.variable} antialiased`}>
+      <body
+        className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} antialiased`}
+      >
         <ClickSound />
         <Nav />
         {children}

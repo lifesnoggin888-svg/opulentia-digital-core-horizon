@@ -24,7 +24,7 @@ export default function Nav() {
             priority
           />
         </Link>
-        <nav className="hidden gap-7 text-sm text-text-dim md:flex">
+        <nav className="hidden gap-7 font-body text-sm text-text-dim md:flex">
           {links.map((l) => (
             <Link key={l.href} href={l.href} className="transition hover:text-amber">
               {l.label}
@@ -33,12 +33,12 @@ export default function Nav() {
         </nav>
         <Link
           href="/contact"
-          className="rounded-sm bg-amber px-4 py-2 text-xs font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
+          className="rounded-[2px] bg-amber px-4 py-2 font-mono text-xs font-semibold tracking-wide text-obsidian transition hover:bg-amber-dim"
         >
           ACCESS CORE
         </Link>
       </div>
-      <nav className="flex gap-4 overflow-x-auto border-t border-border px-6 py-2 text-xs text-text-dim md:hidden">
+      <nav className="flex gap-4 overflow-x-auto border-t border-border px-6 py-2 font-body text-xs text-text-dim md:hidden">
         {links.map((l) => (
           <Link key={l.href} href={l.href} className="whitespace-nowrap hover:text-amber">
             {l.label}
