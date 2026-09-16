@@ -14,18 +14,15 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-obsidian/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center">
           <Image
-            src="/logo-source.png"
+            src="/logo-hero.png"
             alt="Opulentia Digital Core Horizon"
-            width={36}
-            height={19}
-            className="h-8 w-auto"
+            width={352}
+            height={192}
+            className="h-12 w-auto object-contain"
             priority
           />
-          <span className="font-display text-sm tracking-wide text-text">
-            OPULENTIA <span className="text-amber">DIGITAL</span>
-          </span>
         </Link>
         <nav className="hidden gap-7 text-sm text-text-dim md:flex">
           {links.map((l) => (
