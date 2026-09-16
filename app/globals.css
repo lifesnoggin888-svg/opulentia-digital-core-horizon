@@ -80,16 +80,36 @@ body {
 /* -------------------------------------------------------------------- */
 
 .op-card {
+  position: relative;
+  overflow: hidden;
   border-radius: 2px;
-  border: 1px solid var(--color-border);
-  background: linear-gradient(160deg, var(--color-panel-2), var(--color-panel));
+  border: 1px solid rgba(154, 130, 190, 0.22);
+  background: linear-gradient(160deg, rgba(27, 19, 41, 0.6), rgba(20, 15, 32, 0.72));
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06) inset;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.op-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.015) 24%,
+    transparent 42%
+  );
+  pointer-events: none;
 }
 
 .op-card:hover {
   transform: translateY(-3px);
   border-color: var(--color-amber);
-  box-shadow: 0 18px 36px -14px rgba(155, 92, 246, 0.25);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 18px 36px -14px rgba(155, 92, 246, 0.3);
 }
 
 .op-badge {
@@ -347,9 +367,13 @@ body {
 
 .op-term-panel {
   border-radius: 2px;
-  border: 1px solid var(--color-border);
-  background: linear-gradient(180deg, var(--color-panel-2), var(--color-panel));
+  border: 1px solid rgba(154, 130, 190, 0.22);
+  background: linear-gradient(180deg, rgba(27, 19, 41, 0.65), rgba(20, 15, 32, 0.8));
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
   position: relative;
+  overflow: hidden;
 }
 
 .op-term-panel::before {
@@ -400,10 +424,14 @@ body {
 
 .op-tech-card {
   position: relative;
+  overflow: hidden;
   border-radius: 2px;
-  border: 1px solid var(--color-border);
-  background: linear-gradient(160deg, var(--color-panel-2), var(--color-panel));
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid rgba(154, 130, 190, 0.22);
+  background: linear-gradient(160deg, rgba(27, 19, 41, 0.55), rgba(20, 15, 32, 0.7));
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .op-tech-card::before {

@@ -11,10 +11,10 @@ export default function AboutPage() {
         {/* Page-level banner sharing the homepage hero's cinematic poster
             treatment — smaller and quieter, but the same visual system. */}
         <Image
-          src="/hero-poster.jpg"
+          src="/hero-poster-scene.jpg"
           alt=""
           fill
-          className="object-cover object-[50%_20%] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]"
+          className="object-cover object-[50%_15%] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/80 via-obsidian/90 to-obsidian" />
         <div className="op-scanline" />

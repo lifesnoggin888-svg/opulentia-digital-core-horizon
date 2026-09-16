@@ -12,16 +12,19 @@ export default async function Home() {
     <main>
       <NewsTicker />
 
-      <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-obsidian">
+      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-obsidian py-16">
         {/* Cinematic poster render of the Opulentia crystal emblem — full-bleed,
             darkened and gradient-overlaid so headline copy stays legible at
-            every viewport, never an image "slapped behind" existing text. */}
+            every viewport, never an image "slapped behind" existing text.
+            Cropped to the gem/atmosphere scene only (hero-poster-scene.jpg),
+            excluding the poster's own baked-in wordmark so it never repeats
+            as a stray watermark under the real heading. */}
         <Image
-          src="/hero-poster.jpg"
+          src="/hero-poster-scene.jpg"
           alt=""
           fill
           priority
-          className="object-cover object-center opacity-70 [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_92%)] sm:opacity-90"
+          className="object-cover object-[center_25%] opacity-70 [mask-image:radial-gradient(75%_75%_at_50%_38%,black_55%,transparent_100%)] sm:opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/55 via-obsidian/55 to-obsidian" />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent" />

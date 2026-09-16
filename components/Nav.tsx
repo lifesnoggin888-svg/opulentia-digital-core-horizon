@@ -12,7 +12,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-obsidian/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[rgba(154,130,190,0.22)] bg-obsidian/55 backdrop-blur-xl backdrop-saturate-150 shadow-[0_1px_0_0_rgba(255,255,255,0.05)_inset]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
